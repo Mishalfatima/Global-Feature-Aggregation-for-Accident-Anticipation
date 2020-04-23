@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="b23c0754-2aec-435c-b5a3-13f04b6fa844" name="mishal@vivace.kaist.ac.kr" url="http://vivace.kaist.ac.kr">
+        <fileTransfer host="vivace.kaist.ac.kr" port="2222" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" shareSSLContext="true" />
+          </advancedOptions>
+          <option name="port" value="2222" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

@@ -1,9 +1,10 @@
 import tensorflow as tf
 from RNN import *
-from dataloader_RNN import *
 import time
 import matplotlib.pyplot as plt
 import os
+import argparse
+import numpy as np
 
 batch_size = 10
 n_input = 4096
@@ -43,9 +44,6 @@ def train(args):
     with tf.device('/device:GPU:1'):
         print('..training..')
 
-        dashcam = Dashcam_data(train=True, batch_size=batch_size)
-        tot_batches = int((dashcam.total_features)/batch_size)
-
         x, keep, y, loss, lstm_variables, soft_pred, zt, lr = LSTM_RNN(n_input,n_frames,n_objects,batch_size,n_classes)
         optimizer = tf.train.AdamOptimizer(learning_rate=lr).minimize(loss / n_frames)
 
@@ -80,7 +78,6 @@ def train(args):
 
         else:
             qq = 0
-
 
         for epoch in range(int(qq),num_epochs):
             tStart_epoch = time.time()
@@ -139,7 +136,6 @@ def test_all(sess,x,keep, y,loss,lstm_variables, soft_pred,train=True):
     total_loss = 0.0
     acc = 0
     all_pred = []
-    dashcam_test = Dashcam_data(train=train,batch_size=batch_size)
 
     o = 0
     for num_batch in range(1,test_num+1):
