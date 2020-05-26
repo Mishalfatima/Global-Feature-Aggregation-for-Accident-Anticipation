@@ -11,6 +11,12 @@ downloaded from https://aliensunmin.github.io/project/dashcam/
 
 The method anticipates accidents 3.76 seconds earlier on average. 
 
+main.py file is used for testing and training purpose.
+
+RNN.py contains the model.
+
+extract_features.py extracts features from full frames using pretrained VGG-16. 
+
 ## Reference
 
 ```
