@@ -20,8 +20,8 @@ train_num = 126
 test_num = 46
 n_objects = 10
 
-train_path = "./CrashCatcher/features/training/"
-test_path = "./CrashCatcher/features/testing/"
+train_path = "./hdd/local/sda/mishal/Dashcam/training/"
+test_path = "/hdd/local/sda/mishal/Dashcam/testing/"
 
 os.environ["CUDA_VISIBLE_DEVICES"] = "1"
 
